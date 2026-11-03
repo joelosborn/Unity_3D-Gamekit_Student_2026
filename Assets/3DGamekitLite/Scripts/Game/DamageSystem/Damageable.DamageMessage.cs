@@ -1,6 +1,5 @@
 using UnityEngine;
-
-namespace Gamekit3D
+using Gamekit3D;
 {
     public partial class Damageable : MonoBehaviour
     {
@@ -15,4 +14,18 @@ namespace Gamekit3D
             public bool stopCamera;
         }
     } 
+    private void DealDamage()
+    {
+        Damageble.DamageMessage specificDamageMessage = new Damageble.DamageMessage()
+        {
+            amount = 1,
+            damager = this,
+            direction = Vector3.zero,
+            damageSource = Vector3.zero,
+            throwing = false,
+            stopCamera = false, 
+            ;
+
+
+        };
 }

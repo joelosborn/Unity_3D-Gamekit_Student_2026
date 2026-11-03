@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Gamekit3D.Message;
 using UnityEngine.Serialization;
-
-namespace Gamekit3D
+using Gamekit3D;
 {
     public partial class Damageable : MonoBehaviour
     {
