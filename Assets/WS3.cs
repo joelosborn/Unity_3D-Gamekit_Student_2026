@@ -5,9 +5,11 @@ using FMOD.Studio;
 
 public class WS3 : MonoBehaviour
 {
-    public float timer = 5f;
+    private float timer = 5f;
     public EventInstance eventInstance;
+
     public EventReference eventReference;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,9 +19,11 @@ public class WS3 : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
+    {
+        timer -= Time.deltaTime;
         if (timer <= 0f)
         {
-            eventInstance.setParameterByName("Parameter1", 1);
+            eventInstance.setParameterByName("Progress", 1);
+        }
     }
 }
