@@ -1,5 +1,5 @@
 using UnityEngine;
-using Gameit3D;
+using Gamekit3D;
     
 
 public class NewMonoBehaviourScript : MonoBehaviour
@@ -15,22 +15,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         
     }
-
-    private void DealDamage()
-    {
-        Damageble.DamageMessage specificDamageMessage = new Damageble.DamageMessage()
-        {
-            amount = 1,
-            damager = this,
-            direction = Vector3.zero,
-            damageSource = Vector3.zero,
-            throwing = false,
-            stopCamera = false, 
-            ;
-
-
-        };
-        
+   
         
         // now we can use specificDamageMessage as a variable and deal 1 damage
     
