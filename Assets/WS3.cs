@@ -1,29 +1,89 @@
+using System;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using Gamekit3D;
+
+public enum ElementalPower
+{
+    Fire,
+    Water,
+    Earth,
+    Light,
+    None
+}
+[System.Serializable]
+public struct CharacterInformation
+{
+    public string name;
+    public ElementalPower elementalPower;
+    public float speed;
+    public int health;
+    public bool isAlive;
+    public int damagePower;
+}
+
+public enum CharacterMood
+{
+
+    Happy,
+    Sad,
+    Angry,
+    Frustrated,
+    Mesmerized,
+    Ecstatic,
+    Furious,
+    Grounded
+}
+
 
 
 public class WS3 : MonoBehaviour
 {
-    private float timer = 5f;
-    public EventInstance eventInstance;
 
-    public EventReference eventReference;
+    public ElementalPower elementKraft;
+    public CharacterInformation characterInformation;
+    public int[] highScores;
+    public CharacterMood mood;
+    public int[] kills;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        eventInstance = RuntimeManager.CreateInstance(eventReference);
-        eventInstance.start();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        timer -= Time.deltaTime;
-        if (timer <= 0f)
+        if (mood == CharacterMood.Frustrated)
         {
-            eventInstance.setParameterByName("Progress", 1);
+            Debug.Log("AAAARRGHH!!!");
         }
+        
+        if (characterInformation.health == 0)
+            {
+              mood = CharacterMood.Sad;
+            }
+
+        if (elementKraft == ElementalPower.Fire)
+        {
+            mood = CharacterMood.Furious;
+        }
+
+        if (elementKraft == ElementalPower.Water)
+        {
+            mood = CharacterMood.Mesmerized;
+        }
+
+        if (elementKraft == ElementalPower.Earth)
+        {
+            mood = CharacterMood.Grounded;
+        }
+        
+        if (kills[0] == 0)
+        {
+            mood = CharacterMood.Angry;
+            
+        }
+        
+           
     }
+
+
+        
+    
 }
