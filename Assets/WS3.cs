@@ -79,7 +79,16 @@ public class WS3 : MonoBehaviour
             mood = CharacterMood.Angry;
             
         }
-        
+
+        switch (elementKraft)
+        {
+            case ElementalPower.Fire:
+                //Run this code
+                mood = CharacterMood.Frustrated;
+
+
+                break;
+        }
            
     }
 
